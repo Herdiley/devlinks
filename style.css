@@ -70,12 +70,17 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: desliza-volta 0.3s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: desliza 0.5s forwards;
 }
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
 #switch span {
   display: block;
   width: 64px;
@@ -138,4 +143,20 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+@keyframes desliza {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes desliza-volta {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
